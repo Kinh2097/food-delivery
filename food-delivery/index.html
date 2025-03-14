@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính phí giao hàng</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Tính phí giao hàng</h2>
+
+        <!-- Nhập địa chỉ -->
+        <label for="address">Nhập địa chỉ giao hàng:</label>
+        <input type="text" id="address" placeholder="Nhập địa chỉ hoặc chọn trên bản đồ">
+        
+        <!-- Chọn phương thức vận chuyển -->
+        <label for="transportMode">Phương thức vận chuyển:</label>
+        <select id="transportMode">
+            <option value="DRIVING">Ô tô</option>
+            <option value="WALKING">Đi bộ</option>
+            <option value="BICYCLING">Xe đạp</option>
+            <option value="TWO_WHEELER">Xe máy</option>
+        </select>
+        
+        <button onclick="calculateFee()">Tính phí</button>
+
+        <!-- Hiển thị thông tin -->
+        <h3>Thông tin</h3>
+        <p><strong>Vị trí của bạn:</strong> <span id="userLocation">Đang lấy...</span></p>
+        <p><strong>Khoảng cách:</strong> <span id="distance">-</span> km</p>
+        <p><strong>Thời gian ước tính:</strong> <span id="duration">-</span></p>
+        <p><strong>Phí giao hàng:</strong> <span id="fee">-</span> VND</p>
+
+        <!-- Bản đồ Google Maps -->
+        <div id="map"></div>
+    </div>
+
+    <script src="script.js"></script>
+    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBe9l5FRxccU5bnHyLawl9NpZ6dxzqZyAw&libraries=places"></script>
+</body>
+</html>
